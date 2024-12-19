@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css'
 
-function Calculate() {
+function CalculateV2() {
 // useState 훅으로 정의한 변수는 상태 변수
   const [first,setFirst] = useState(0)
   const [second,setSecond] = useState(0)
@@ -15,7 +15,9 @@ function Calculate() {
   const handleCalculate = (e) => {
       const sel = e.target.innerHTML
       setOp(sel)
-      switch (sel) {
+      //  if(a==1) ~ else if(a==2) ~ else if(a==3) ~ else if(a==4) 
+      //  동등 조건식을 여러번 검사해야 할때 switch 변경
+      switch (sel) {  
         case '+':
           setResult(first+second)
           break;
@@ -28,7 +30,8 @@ function Calculate() {
         case '÷':
           setResult(first/second)
           break;
-        default:
+        default: 
+        // 위의 case 값에 모두 해당되지 않을 때
           setResult(0)
           break;
       }
@@ -66,4 +69,4 @@ function Calculate() {
   )
 }
 
-export default Calculate;
+export default CalculateV2;

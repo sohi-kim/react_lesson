@@ -1,6 +1,7 @@
 import './App.css'
-import CalculateRef from './component/CalculateRef';
+import CalculateV2 from './component/CalculateV2';
 import InputState from './component/InputState';
+import PageMove from './component/PageMove';
 import Say from './component/Say';
 
 function App(){
@@ -12,7 +13,8 @@ function App(){
         <hr/>
         <InputState/>
         <hr/>
-        <CalculateRef/>
+        <CalculateV2/>
+        <PageMove last={12}/>
     </div>
   )
 }
