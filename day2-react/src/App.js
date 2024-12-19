@@ -1,22 +1,18 @@
+import React from 'react';
 import './App.css'
 import CalculateV2 from './component/CalculateV2';
-import InputState from './component/InputState';
-import PageMove from './component/PageMove';
-import Say from './component/Say';
+import CalculateRef from './component/CalculateRef';
+import CounterRef from './component/CounterRef';
 
-function App(){
-
+function App() {
   return (
-    <div className="App">
-        <h3>Day2 App</h3>
-        <Say />
-        <hr/>
-        <InputState/>
-        <hr/>
+    <div className='App'>
         <CalculateV2/>
-        <PageMove last={12}/>
+        <CalculateRef/>
+        <hr/>
+        <CounterRef/>
     </div>
-  )
+  );
 }
 
 export default App;
