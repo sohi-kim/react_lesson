@@ -29,6 +29,15 @@ function App() {
   const [todos, setTodos] = useState(initVal)
  
   console.log('todos:',todos)
+
+  // todos  할 일 객체 목록 중 삭제하기
+  const handleRemove = (id) => {
+    // 인자로 전달받은 id값을 갖는 요소 삭제하기
+    // 인자 id값이 아닌 요소로만 새로운 배열 만들기
+    const newtodos = todos.filter( (item) => item.id !== id)
+    setTodos(newtodos)
+  }
+
   // todos 에 할일 객체를 추가
   const handleInsert = (text) => {
       const todo = {
@@ -48,6 +57,9 @@ function App() {
    <>
       <button onClick={() => handleInsert('테스트할일')}>
         할일 추가
+      </button>
+      <button onClick={() => handleRemove(1)}>
+        할일 삭제 id=2
       </button>
       <TodoTemplate>
             <TodoInsert onInsert={handleInsert} />
