@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import TodoTemplate from './component/TodoTemplate';
 import TodoInsert from './component/TodoInsert';
 import TodoList from './component/TodoList';
@@ -27,6 +27,7 @@ function App() {
 
   ]
   const [todos, setTodos] = useState(initVal)
+  const maxid = useRef(todos.length+1)
  
   console.log('todos:',todos)
 
@@ -54,7 +55,7 @@ function App() {
   // todos 에 할일 객체를 추가
   const handleInsert = (text) => {
       const todo = {
-        id: todos.length +1 ,
+        id: maxid.current ,
         text ,
         checked: false
       }
@@ -64,6 +65,8 @@ function App() {
       // => todos 배열 자체가 바뀌는 것은 아닙니다.state 변화 없음.
       setTodos(todos.concat(todo))
       // todos.concat(todo) 는 새로운 배열을 리턴. state 변화. 재렌더링
+
+      maxid.current +=1
   }
 
   return (
