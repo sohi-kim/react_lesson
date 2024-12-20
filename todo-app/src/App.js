@@ -30,6 +30,17 @@ function App() {
  
   console.log('todos:',todos)
 
+  const handleChecked = (id) =>{
+      // 배열 자체를 바꾸는 것이 아니라 배열 특정 요소의 checked 값만 변경
+      // ! 연산자는 참은 거짓, 거짓은 참으로 변경
+      const newtodos = todos.map(
+        (item) => item.id === id ? {...item, checked: !item.checked} : item
+      )
+      setTodos(newtodos)
+  }
+
+
+
   // todos  할 일 객체 목록 중 삭제하기
   const handleRemove = (id) => {
     // 인자로 전달받은 id값을 갖는 요소 삭제하기
@@ -61,9 +72,13 @@ function App() {
       <button onClick={() => handleRemove(1)}>
         할일 삭제 id=2
       </button>
+      <button onClick={() => handleChecked(2)}>
+        할일 체크 변경 id=2
+      </button>
       <TodoTemplate>
             <TodoInsert onInsert={handleInsert} />
-            <TodoList todos={todos} />
+            <TodoList todos={todos} onRemove={handleRemove} 
+                      onChecked={handleChecked}/>
             {/*     프로퍼티이름={변수명} */}
       </TodoTemplate>
     </>  
