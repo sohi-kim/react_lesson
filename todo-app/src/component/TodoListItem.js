@@ -4,7 +4,7 @@ import { MdCheckBox, MdCheckBoxOutlineBlank, MdRemoveCircleOutline } from 'react
 import cn from 'classnames'
 
 // 할일 항목 1개(부모 컴포넌트로 부터 받는 프롭)를 출력하는 컴포넌트
-function TodoListItem({todo,onRemove,onChecked}) {
+function TodoListItem({todo,onRemove,onChecked,onTest}) {
   // todo 객체를 분해(비구조화) 선언
   const {id, text, checked} = todo
 
@@ -18,7 +18,7 @@ function TodoListItem({todo,onRemove,onChecked}) {
   return (
     <div className='TodoListItem'>
       {/*  yarn add classnames 설치해야 스타일 선택적 적용 가능 */}
-       <div className={cn('checkbox',{checked})} onClick={()=>onChecked(id)}>
+       <div className={cn('checkbox',{checked})} onClick={()=>onTest(id)}>
          {checked? <MdCheckBox/> : <MdCheckBoxOutlineBlank/>}
          <div className='text'>{text}</div>
        </div>
