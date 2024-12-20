@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TodoTemplate from './component/TodoTemplate';
 import TodoInsert from './component/TodoInsert';
+import TodoList from './component/TodoList';
 
 
 // 추가 패키지 설치 :   yarn add sass react-icons
@@ -37,7 +38,10 @@ function App() {
       }
 
       // todos 에 새로운 todo를 추가해서 변경합니다.
+      // 배열 요소 추가 push() 는 리턴이 없고 todos 배열에 추가합니다.
+      // => todos 배열 자체가 바뀌는 것은 아닙니다.state 변화 없음.
       setTodos(todos.concat(todo))
+      // todos.concat(todo) 는 새로운 배열을 리턴. state 변화. 재렌더링
   }
 
   return (
@@ -47,6 +51,8 @@ function App() {
       </button>
       <TodoTemplate>
             <TodoInsert onInsert={handleInsert} />
+            <TodoList todos={todos} />
+            {/*     프로퍼티이름={변수명} */}
       </TodoTemplate>
     </>  
   );

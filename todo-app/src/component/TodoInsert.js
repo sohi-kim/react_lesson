@@ -12,7 +12,7 @@ function TodoInsert({onInsert}) {
         setValue('')
   }
   return (
-    // form 은 동기적 통신 방식. 
+    // form 은 동기적 통신 방식. form 안의 input은 엔터를 누르면 submit 됩니다.
     // => input 에서 엔터를 누르면 특정 함수 실행하도록 onSubmit 처리함수 작성
     <form className='TodoInsert' onSubmit={handleSubmit}>
       <input placeholder='할 일을 입력하세요.'
