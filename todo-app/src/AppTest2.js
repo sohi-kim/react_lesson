@@ -83,7 +83,17 @@ function App() {
         할일 체크 변경 id=2
       </button>
    
-      <TodoList todos={[]}/>
+   {/* todos.map() 을 실행하는 컴포넌트. todos 없으면 오류 */}
+   {/* <TodoList /> */}
+       <TodoList todos={[]}/>
+       <TodoList todos={[
+          {id:5,
+           checked: true 
+          },
+          {id:2,
+          checked:false
+          }
+       ]} onTest={onTest}/>
 
     </>  
   );
