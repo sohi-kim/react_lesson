@@ -31,11 +31,13 @@ function App() {
   console.log('todos:',todos)
 
   const handleChecked = (id) =>{
-      // 배열 자체를 바꾸는 것이 아니라 배열 특정 요소의 checked 값만 변경
+      // 배열 자체를 바꿔야 상태 변경됩니다.
+      // 배열 특정 요소의 checked 값만 변경한 것을 새로운 배열로 하여 todos 변경
       // ! 연산자는 참은 거짓, 거짓은 참으로 변경
       const newtodos = todos.map(
         (item) => item.id === id ? {...item, checked: !item.checked} : item
       )
+      // 상태가 바뀝니다.
       setTodos(newtodos)
   }
 
