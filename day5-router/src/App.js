@@ -22,7 +22,9 @@ function App(props) {
                   {/* http://localhost:3000/about */}
                   <Route path='/about' element={<About/>}/>
                   <Route path='/board' element={<Board/>}/>
+                  <Route path='/profile' element={<Profile/> }/>
                   <Route path='/profile/:username' element={<Profile/> }/>
+                  <Route path='/profile/:username/:id' element={<Profile/> }/>
                   {/* : 기호 뒤는 경로파라미터 이름을 지정합니다.
                      실제 url에서는 : 기호 없이 값을 줍니다.
                      값을 설정하는 곳은 Link 입니다.
