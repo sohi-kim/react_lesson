@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function BoxV2(props) {
-  const [box , setBox] = useSate({
+  const [box , setBox] = useState({
               width: 100,
               height: 100,
               left: 300,
@@ -66,10 +66,10 @@ function BoxV2(props) {
 
 function SandBox(props){
   const boxstyle={
-    width: `${props.width}px`,
-    height:`${props.height}px`,
-    left: `${props.left}px`,
-    top:`${props.top}px`,
+    width: `${props.box.width}px`,
+    height:`${props.box.height}px`,
+    left: `${props.box.left}px`,
+    top:`${props.box.top}px`,
     position:'absolute',
     background:'green'
 }
