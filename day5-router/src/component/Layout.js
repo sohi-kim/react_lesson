@@ -16,6 +16,15 @@ function Header(props) {
           </li>
           <li>
             <Link to="/profile">프로필</Link>
+            <ul>
+              {/* App.js 에서 라우트 정보 path 에 /profile/:username
+                  username 변수에 해당하는 값을 Link 에 추가.
+                  값을 받는 곳은 Profile 컴포넌트.
+              */}
+                <li>사나 <Link to="/profile/sana">프로필</Link></li>
+                <li>모모 <Link to="/profile/momo">프로필</Link></li>
+                <li>나연 <Link to="/profile/nayeon">프로필</Link></li>
+            </ul>
           </li>
         </ul>
       </nav>
