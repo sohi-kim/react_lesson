@@ -63,13 +63,13 @@ function BoxV2(props) {
     </div>
   );
 }
-
-function SandBox(props){
+// ** 퀴즈 : props 를 객체 분해하여 바꿔서 실행해 보세요.**
+function SandBox({box}){
   const boxstyle={
-    width: `${props.box.width}px`,
-    height:`${props.box.height}px`,
-    left: `${props.box.left}px`,
-    top:`${props.box.top}px`,
+    width: `${box.width}px`,
+    height:`${box.height}px`,
+    left: `${box.left}px`,
+    top:`${box.top}px`,
     position:'absolute',
     background:'green'
 }
